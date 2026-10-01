@@ -1,0 +1,4 @@
+# Local database settings. This file is git-ignored - edit the password to match YOUR MySQL.
+db.url=jdbc:mysql://localhost:3306/user_management?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.user=root
+db.password=CHANGE_ME
