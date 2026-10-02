@@ -990,21 +990,23 @@
 
     <aside class="auth-brand">
 
+    <!-- Brand -->
 
-        <!-- Brand -->
+    <div class="brand">
 
-        <div class="brand">
+        <div class="login-logo">
 
-            <span class="brand-mark">
-                UM
-            </span>
-
-            <span>
-                User Management
-            </span>
+            <img
+                src="${pageContext.request.contextPath}/images/logo.png"
+                class="login-brand-logo">
 
         </div>
 
+        <span>
+            User Management
+        </span>
+
+    </div>
 
         <!-- Main Content -->
 

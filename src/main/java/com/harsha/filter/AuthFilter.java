@@ -32,7 +32,7 @@ public class AuthFilter implements Filter {
     // Resources that anyone may open without logging in
     private static final Set<String> PUBLIC_PATHS =
             Set.of("/login.jsp", "/error.html", "/favicon.ico", "/api/auth/login");
-    private static final String[] PUBLIC_PREFIXES = {"/css/", "/js/"};
+    private static final String[] PUBLIC_PREFIXES = {"/css/", "/js/","/images/"};
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
