@@ -58,6 +58,25 @@ public class UserDAO {
         }
         return users;
     }
+    
+    /**Only USER accounts**/
+    public List<User> getAllRegularUsers() throws SQLException {
+        String sql = "SELECT " + COLUMNS
+                   + " FROM users WHERE role <> 'ADMIN' ORDER BY id";
+
+        List<User> users = new ArrayList<>();
+
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                users.add(mapRow(rs));
+            }
+        }
+
+        return users;
+    }
 
     public User getUserById(int id) throws SQLException {
         String sql = "SELECT " + COLUMNS + " FROM users WHERE id = ?";
@@ -74,10 +93,12 @@ public class UserDAO {
     }
 
     public int countUsers() throws SQLException {
-        String sql = "SELECT COUNT(*) FROM users";
+        String sql = "SELECT COUNT(*) FROM users WHERE role <> 'ADMIN'";
+
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
+
             return rs.next() ? rs.getInt(1) : 0;
         }
     }

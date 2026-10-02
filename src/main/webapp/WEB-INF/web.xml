@@ -13,7 +13,7 @@
     </session-config>
 
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>splash.jsp</welcome-file>
     </welcome-file-list>
 
     <!-- Friendly pages instead of Tomcat's default error page (which can show stack traces) -->
